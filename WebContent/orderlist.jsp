@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -57,14 +56,16 @@
 						<a href="index.jsp">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a
 							href="myAccount.jsp">&nbsp;我的帐户</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;订单查询
 					</div>
-				
-				
-				
+
+
+
+
+
 					<table cellspacing="0" class="infocontent">
 						<tr>
 							<td style="padding:20px"><p>欢迎xxx光临商城！</p>
 								<p>
-									您有<font style="color:#FF0000">${count }</font>个订单
+									您有<font style="color:#FF0000">xx</font>个订单
 								</p>
 								<table width="100%" border="0" cellspacing="0" class="tableopen">
 									<tr>
@@ -75,19 +76,29 @@
 										<td bgcolor="#A3E2E6" class="tableopentd01">操作</td>
 									</tr>
 
-						<c:forEach items="${orders }" var="order" varStatus="vs">
-								
-									<tr>
-										<td class="tableopentd02" id="count">${vs.count }</td>
 
-										<td class="tableopentd02">${order.receiverName }</td>
-										<td class="tableopentd02">${order.ordertime }</td>
-										<td class="tableopentd02">${order.paystate==0? "未支付":"已支付"}</td>
-										<td class="tableopentd03"><a href="${pageContext.request.contextPath }/findOrderItemsByOrderId?orderid=${order.id}">查看</a>&nbsp;&nbsp;
+
+									<tr>
+										<td class="tableopentd02">001</td>
+
+										<td class="tableopentd02">tom</td>
+										<td class="tableopentd02">2012-10-10</td>
+										<td class="tableopentd02">未支付</td>
+										<td class="tableopentd03"><a href="orderInfo.jsp">查看</a>&nbsp;&nbsp;
 											<a href="#">刪除</a>
 										</td>
 									</tr>
-						</c:forEach>		
+									
+									<tr>
+										<td class="tableopentd02">002</td>
+
+										<td class="tableopentd02">张三</td>
+										<td class="tableopentd02">2014-10-10</td>
+										<td class="tableopentd02">已支付</td>
+										<td class="tableopentd03"><a href="orderInfo.jsp">查看</a>&nbsp;&nbsp;
+											<a href="#">刪除</a>
+										</td>
+									</tr>
 								</table>
 							</td>
 						</tr>

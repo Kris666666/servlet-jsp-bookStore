@@ -55,9 +55,6 @@ public class CreatOrderServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//把用户的订单编号和金额传出去
-		request.setAttribute("orderid", order.getId());
-		request.setAttribute("money", order.getMoney());
 		request.getRequestDispatcher("/pay.jsp").forward(request, response);
 	}
 

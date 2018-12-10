@@ -15,22 +15,6 @@
 				+ new Date().getTime();
 	}
 </script>
-<script type="text/javascript">
-	function sixpassword() {
-		var password = document.getElementById("password");
-		if(password.value.length<6){
-			alert("密码长度必须大于六位！");
-		}
-	}
-	
-	function check() {
-		var one = document.getElementById("password");
-		var two = document.getElementById("again");
-		if(one.value!=two.value){
-			alert("两次输入的密码不一致!");
-		}
-	}
-</script>
 </head>
 
 
@@ -40,7 +24,7 @@
 	<%@include file="menu_search.jsp"%><%--导入导航条与搜索 --%>
 
 	<div id="divcontent">
-		<form action="${pageContext.request.contextPath}/user?method=register"
+		<form action="${pageContext.request.contextPath}/register"
 			method="post">
 			<table width="850px" border="0" cellspacing="0">
 				<tr>
@@ -64,15 +48,13 @@
 							</tr>
 							<tr>
 								<td style="text-align:right">密码：</td>
-								<td><input id="password" onblur="sixpassword()" type="password" class="textinput"
+								<td><input type="password" class="textinput"
 									name="password" /></td>
-								<td>
-									<font color="#999999">密码设置至少6位</font>
-								</td>
+								<td><font color="#999999">密码设置至少6位</font></td>
 							</tr>
 							<tr>
 								<td style="text-align:right">重复密码：</td>
-								<td><input id="again" onblur="check()" type="password" class="textinput"
+								<td><input type="password" class="textinput"
 									name="repassword" /></td>
 								<td>&nbsp;</td>
 							</tr>
