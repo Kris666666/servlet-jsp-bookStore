@@ -15,9 +15,9 @@
 </head>
 
 <body>
-	<form action="paysuccess.jsp" method="post">
-		订单号：<INPUT TYPE="text" NAME="orderid" value="001"> 支付金额：<INPUT
-			TYPE="text" NAME="money" value="1000">元
+	<form action="${pageContext.request.contextPath }/payOnlineServlet" method="post">
+		订单号：<INPUT TYPE="text" NAME="orderid" value="${orderid }"> 支付金额：<INPUT
+			TYPE="text" NAME="money" value="0.01">元
 		<div class="divBank">
 			<div class="divText">选择网上银行</div>
 			<div style="margin-left: 20px;">

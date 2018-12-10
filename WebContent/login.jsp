@@ -14,7 +14,7 @@
 	<jsp:include page="menu_search.jsp" />
 
 	<div id="divcontent">
-		<form action="${pageContext.request.contextPath }/loginServlet" method="post">
+		<form action="${pageContext.request.contextPath }/user?method=login" method="post">
 			<table width="900px" border="0" cellspacing="0">
 				<tr>
 					<td style="padding:30px"><div style="height:470px">

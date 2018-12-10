@@ -1,6 +1,7 @@
 package cn.itcast.bookStore.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import cn.itcast.bookStore.dao.OrderDao;
 import cn.itcast.bookStore.dao.OrderItemDao;
@@ -26,5 +27,26 @@ public class OrderService {
 			e.printStackTrace();
 			ManagerThreadLocal.rollback();
 		}
+	}
+
+	public List<Order> findOrderByUserId(int id) {
+		try {
+			return orderDao.findOrders(id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public Order findOrderItemsByOrderId(String orderid) {
+		
+		try {
+			return orderDao.findOrderItemsByOrderId(orderid);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

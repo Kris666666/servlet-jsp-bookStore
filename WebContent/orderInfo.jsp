@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 <html>
@@ -42,26 +43,19 @@
 
 												</tr>
 											</table>
+										<c:forEach items="${order.orderItems }" var="o" varStatus="oi">
 											<table width="100%" border="0" cellspacing="0">
 												<tr>
-													<td width="10%">1</td>
-													<td width="40%">Thinking In Java</td>
-													<td width="10%">100</td>
-													<td width="10%">10</td>
-													<td width="10%">1000</td>
+													<td width="10%">${vs.count }</td>
+													<td width="40%">${o.p.name }</td>                         <!-- 商品的名称 -->
+													<td width="10%">${o.p.price }</td>
+													<td width="10%">${o.buynum }</td>
+													<td width="10%">${o.buynum*o.p.price }</td>
 
 												</tr>
 											</table>
-											<table width="100%" border="0" cellspacing="0">
-												<tr>
-													<td width="10%">2</td>
-													<td width="40%">Thinking In Java</td>
-													<td width="10%">100</td>
-													<td width="10%">10</td>
-													<td width="10%">1000</td>
-
-												</tr>
-											</table>
+										</c:forEach>
+					
 
 											<table cellspacing="1" class="carttable">
 												<tr>
@@ -71,9 +65,9 @@
 											</table>
 
 											<p>
-												收货地址：xxxx&nbsp;&nbsp;&nbsp;&nbsp;<br />
-												收货人：&nbsp;&nbsp;&nbsp;&nbsp;tom&nbsp;&nbsp;&nbsp;&nbsp;<br />
-												联系方式：13888888888&nbsp;&nbsp;&nbsp;&nbsp;
+												收货地址：${order.receiverAddress }&nbsp;&nbsp;&nbsp;&nbsp;<br />
+												收货人：&nbsp;&nbsp;&nbsp;&nbsp;${order.receiverName }&nbsp;&nbsp;&nbsp;&nbsp;<br />
+												联系方式：${order.receiverPhone }&nbsp;&nbsp;&nbsp;&nbsp;
 
 											</p>
 											<hr>
